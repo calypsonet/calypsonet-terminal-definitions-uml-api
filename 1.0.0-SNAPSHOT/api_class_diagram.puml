@@ -76,8 +76,8 @@ package "definitions" as api {
     ISO_15693
 }
 +enum "CardType" as CardType <<green>> {
-    ISO_7816_3
-    ISO_14443_4
+    ISO_14443_4A
+    ISO_14443_4B
     ISO_14443_3A_MIFARE_CLASSIC_1K
     ISO_14443_3A_MIFARE_CLASSIC_4K
     ISO_14443_3A_MIFARE_ULTRALIGHT
