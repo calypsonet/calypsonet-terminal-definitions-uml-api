@@ -1,0 +1,336 @@
+= Terminal Definitions API -- Specification
+Calypso Networks Association <https://calypsonet.org>
+v1.0.0-SNAPSHOT, {docdate}
+:doctype: book
+:toc: left
+:toclevels: 4
+:sectnums:
+:sectnumlevels: 4
+:sectanchors:
+:sectlinks:
+:data-uri:
+:icons: font
+:rouge-style: github
+:source-highlighter: rouge
+:docinfodir: {docdir}/assets
+:docinfo: shared
+:imagesoutdir: {docdir}/gen
+:pdf-themesdir: {docdir}/assets
+:pdf-theme: calypso
+:pdf-fontsdir: {docdir}/assets/fonts
+:experimental:
+:xrefstyle: short
+:figure-caption: Figure
+:table-caption: Table
+:example-caption: Example
+:appendix-caption: Appendix
+:organization: Calypso Networks Association
+:short-name: CNA
+:spec-name: Terminal Definitions API
+:spec-id: CNA-TD-API
+:spec-version: 1.0.0-SNAPSHOT
+
+[abstract]
+== Abstract
+
+This document is the official technical specification of the **{spec-name}** standardised
+by the **{organization}** ({short-name}).
+It defines, in a language-agnostic way, the enumerated types that constitute *global constants* shared between
+several APIs of the CNA *Terminal API* family.
+
+The {spec-name} is a *foundation* module: it exposes no service interface, no SPI, no state machine. Its sole
+purpose is to host the cross-cutting enumerations that other Terminal APIs depend on.
+
+[discrete]
+== Document Status
+
+[cols="1h,3", grid=rows, frame=all]
+|===
+| Specification ID    | {spec-id}
+| Version             | {spec-version}
+| Status              | Working Draft -- submitted to the CNA TC Terminal for validation
+| Editor              | {organization}
+| Reference model     | link:api_class_diagram.puml[`api_class_diagram.puml`] / link:api_class_diagram.svg[`api_class_diagram.svg`]
+| Reference license   | Eclipse Public License -- v 2.0 (EPL-2.0)
+|===
+
+NOTE: The present document specifies the {spec-version} of the {spec-name} as an *initial release*. It defines
+a single, coherent baseline against which conforming implementations are evaluated.
+
+// =============================================================================
+== Introduction
+
+=== Purpose
+
+The {spec-name} centralises the *enumerated types* that constitute global constants shared between several CNA
+Terminal APIs. By isolating these notions in a dedicated module, the family avoids:
+
+* duplicating the same enumerations across several APIs,
+* coupling a consumer API to another consumer API merely because they share a constant,
+* mixing the slow, conservative evolution rhythm of these constants with the faster rhythm of the consumer APIs.
+
+=== Scope
+
+This specification covers:
+
+* the `RfTechnology` enumeration listing the radio-frequency communication technologies supported by contactless
+  card readers,
+* the `CardType` enumeration listing the card products and transport-protocol families identifiable at detection
+  time.
+
+The following topics are *out of scope*:
+
+* the wire-level protocols associated with each technology,
+* the discovery mechanism by which a reader determines the technology or type of a presented card,
+* any interface or operation that consumes these enumerations -- consumed APIs are responsible for documenting how
+  they use them.
+
+=== Conformance
+
+A software product conforms to this specification if and only if:
+
+. it exposes the enumerations defined in <<sec_specification>> with the exact names and value sets prescribed
+  here,
+. it preserves backward compatibility with respect to enumeration value identifiers across minor versions of the
+  specification.
+
+Throughout this specification, the key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, **RECOMMENDED**,
+**MAY** and **OPTIONAL** are to be interpreted as described in **RFC 2119** and **RFC 8174** when, and only when,
+they appear in all capitals.
+
+In conformance with RFC 2119, **SHALL** is equivalent to **MUST**; this specification uses **MUST** exclusively in
+order to avoid ambiguity.
+
+=== Document Conventions
+
+==== Naming
+
+Type names follow `UpperCamelCase`; enumeration values use `UPPER_SNAKE_CASE`. Names defined by this specification
+are reproduced exactly as they appear in the reference UML class diagram (<<sec_class_diagram>>).
+
+=== References
+
+[cols="1,1,4", options="header"]
+|===
+| Reference | Identifier | Title
+
+| [[ref_rfc2119]] [RFC 2119]
+| RFC 2119
+| _Key words for use in RFCs to Indicate Requirement Levels_, S. Bradner, March 1997.
+
+| [[ref_rfc8174]] [RFC 8174]
+| RFC 8174
+| _Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words_, B. Leiba, May 2017.
+
+| [[ref_iso7816]] [ISO/IEC 7816-3]
+| ISO/IEC 7816-3
+| _Identification cards -- Integrated circuit cards -- Part 3: Cards with contacts -- Electrical interface and transmission protocols_.
+
+| [[ref_iso7816_4]] [ISO/IEC 7816-4]
+| ISO/IEC 7816-4
+| _Identification cards -- Integrated circuit cards -- Part 4: Organization, security and commands for interchange_.
+
+| [[ref_iso14443]] [ISO/IEC 14443]
+| ISO/IEC 14443
+| _Identification cards -- Contactless integrated circuit cards -- Proximity cards_.
+
+| [[ref_iso15693]] [ISO/IEC 15693]
+| ISO/IEC 15693
+| _Identification cards -- Contactless integrated circuit cards -- Vicinity cards_.
+
+| [[ref_cna_reader]] [CNA-TR-API]
+| CNA-TR-API
+| _Calypsonet Terminal Reader API Specification_, {organization}. Primary consumer of the enumerations defined here.
+|===
+
+// =============================================================================
+== Terms, Definitions and Abbreviations
+
+=== Terms and Definitions
+
+[cols="1,4", options="header"]
+|===
+| Term            | Definition
+
+| RF Technology   | Radio-frequency communication technology used by a contactless reader to detect a card.
+| Card Type       | Identified product or transport-protocol family of a detected card.
+| Polling         | The act, performed by a contactless reader, of broadcasting an interrogation pattern to discover a card in its field.
+|===
+
+=== Abbreviations
+
+[cols="1,4", options="header"]
+|===
+| Abbreviation | Expansion
+
+| AID  | Application IDentifier
+| CNA  | Calypso Networks Association
+| ISO  | International Organization for Standardization
+| RF   | Radio Frequency
+| RFC  | Request For Comments
+|===
+
+// =============================================================================
+[[sec_architecture]]
+== Architectural Overview
+
+=== Functional positioning
+
+The {spec-name} is depended upon by other CNA Terminal APIs that need to expose typed constants in their public
+signatures. The dependency is *public* (the enumerations appear in the consuming APIs' public surface) and is
+expected to be propagated transitively to the consumers of those APIs:
+
+[plantuml, target=architecture-overview, format=svg]
+....
+@startuml
+skinparam shadowing false
+skinparam roundCorner 8
+skinparam ArrowColor #2C3E50
+
+component "Terminal Application" as App
+component "Other Terminal APIs\n(e.g. Reader API)" as Other
+component "Terminal Definitions API\n(this specification)" as Def
+
+App   --> Other : uses
+Other --> Def   : depends on (public)
+App   --> Def   : transitively
+@enduml
+....
+
+[[sec_class_diagram]]
+=== Reference class diagram
+
+The normative class diagram of this specification is provided as a PlantUML source file alongside this document:
+
+* link:api_class_diagram.puml[`api_class_diagram.puml`] -- canonical UML model,
+* link:api_class_diagram.svg[`api_class_diagram.svg`]   -- rendered representation.
+
+[plantuml, target="api_class_diagram", format="svg"]
+----
+include::api_class_diagram.puml[Terminal Definitions API class diagram, align=center]
+----
+
+=== Evolution policy
+
+. Adding a new value to an existing enumeration is a **backward-compatible** evolution and MAY occur in a minor
+  version of this specification.
+. Removing or renaming a value is a **breaking** change and MUST only occur in a new major version of this
+  specification.
+. Adding a new enumeration to the API is a **backward-compatible** evolution and MAY occur in a minor version.
+
+// =============================================================================
+[[sec_specification]]
+== API Specification
+
+// -----------------------------------------------------------------------------
+=== Package definitions
+
+The `definitions` package contains every type defined by this specification.
+
+[[type_DefinitionsApiProperties]]
+==== DefinitionsApiProperties
+
+[cols="1h,4", grid=rows, frame=all]
+|===
+| Kind     | Final class
+| Package  | `definitions`
+| Purpose  | Exposes the immutable properties of the {spec-name}.
+|===
+
+===== Constants
+
+[cols="1,1,4", options="header"]
+|===
+| Name      | Type     | Description
+
+| `VERSION`
+| `string`
+| String representation of the version of the API implemented by the conforming binding (e.g. `"1.0"`).
+  The value MUST be a dotted decimal of the form `MAJOR.MINOR`.
+|===
+
+[NOTE]
+====
+The `DefinitionsApiProperties` type MUST NOT be instantiated. Implementations MUST prevent external construction.
+====
+
+[[type_RfTechnology]]
+==== Enumeration RfTechnology
+
+[cols="1h,4", grid=rows, frame=all]
+|===
+| Kind     | Enumeration
+| Package  | `definitions`
+| Purpose
+| Identifies a radio-frequency communication technology that a contactless reader can activate during polling.
+  `RfTechnology` is used as an *input* parameter: the integrator declares, at detection time, which RF
+  technologies the reader MUST attempt to detect.
+|===
+
+[cols="1,4", options="header"]
+|===
+| Value                | Description
+
+| `ISO_14443_AB`       | ISO/IEC 14443 family, both Type A and Type B variants. The A/B distinction is *not* exposed at the polling level: the reader is asked to interrogate "the ISO 14443 family".
+| `INNOVATRON_B_PRIME` | Proprietary Innovatron B' technology.
+| `FELICA`             | Sony FeliCa technology.
+| `ISO_15693`          | ISO/IEC 15693 vicinity technology.
+|===
+
+[[type_CardType]]
+==== Enumeration CardType
+
+[cols="1h,4", grid=rows, frame=all]
+|===
+| Kind     | Enumeration
+| Package  | `definitions`
+| Purpose
+| Identifies a card type, as observed after detection. `CardType` is used as an *output* datum: it characterises
+  what was actually detected, combining transport-protocol level and, when applicable, product identity.
+|===
+
+[cols="1,4", options="header"]
+|===
+| Value                                | Description
+
+| `ISO_7816_3`                         | Contact card compliant with ISO/IEC 7816-3.
+| `ISO_14443_4`                        | Contactless card compliant with the ISO/IEC 14443-4 transport protocol. No A/B distinction is exposed at this level: the transport layer is identical and the application behaviour does not depend on the underlying sub-layer.
+| `ISO_14443_3A_MIFARE_CLASSIC_1K`     | MIFARE Classic 1 KB product (ISO/IEC 14443-3 Type A sub-layer).
+| `ISO_14443_3A_MIFARE_CLASSIC_4K`     | MIFARE Classic 4 KB product (ISO/IEC 14443-3 Type A sub-layer).
+| `ISO_14443_3A_MIFARE_ULTRALIGHT`     | MIFARE Ultralight product (ISO/IEC 14443-3 Type A sub-layer).
+| `ISO_14443_3B_ST25_SRT512`           | ST25 SRT512 product (ISO/IEC 14443-3 Type B sub-layer).
+| `INNOVATRON_B_PRIME`                 | Innovatron B' card.
+| `FELICA`                             | Sony FeliCa card.
+| `ISO_15693`                          | ISO/IEC 15693 vicinity card.
+| `UNKNOWN`                            | The implementation could not identify the card type. May happen when a card of a type not yet referenced by this enumeration is detected, or when the detection process is partial.
+|===
+
+[NOTE]
+====
+*Granularity rationale.* The dual granularity of `CardType` -- transport-protocol level for ISO/IEC 14443-4 vs
+product level for MIFARE / ST25 -- reflects the asymmetry between standardised transport (where the A/B
+sub-layer distinction does not affect application behaviour) and proprietary products (where the sub-layer is
+semantically tied to the product). This is why A/B is merged in `ISO_14443_4` but kept distinguishable in the
+product-specific values.
+====
+
+// =============================================================================
+[[sec_behaviours]]
+== Behavioural Requirements
+
+. Implementations MUST expose the enumerations and their values with the exact identifiers prescribed in
+  <<sec_specification>>.
+. Consumer APIs that use `CardType` as an output datum MUST return `UNKNOWN` when the type cannot be determined,
+  rather than returning `null` or raising an exception.
+. Consumer APIs that use `RfTechnology` as an input parameter MUST treat unsupported values as a non-fatal
+  configuration -- the unsupported value MUST be silently ignored and a `WARN`-level message SHOULD be logged.
+
+// =============================================================================
+[appendix]
+== Copyright and License
+
+Copyright (c) {organization}, https://calypsonet.org.
+
+This specification is distributed under the terms of the *Eclipse Public License -- v 2.0* (EPL-2.0). A copy of the
+license is available in the link:LICENSE[`LICENSE`] file alongside this document and at
+https://www.eclipse.org/legal/epl-2.0/.
