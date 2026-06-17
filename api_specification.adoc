@@ -50,7 +50,6 @@ purpose is to host the cross-cutting enumerations that other Terminal APIs depen
 | Version             | {spec-version}
 | Status              | Working Draft -- submitted to the CNA TC Terminal for validation
 | Editor              | {organization}
-| Reference model     | link:api_class_diagram.puml[`api_class_diagram.puml`] / link:api_class_diagram.svg[`api_class_diagram.svg`]
 | Reference license   | Eclipse Public License -- v 2.0 (EPL-2.0)
 |===
 
@@ -198,12 +197,10 @@ App   --> Def   : transitively
 ....
 
 [[sec_class_diagram]]
-=== Reference class diagram
+=== UML class diagram
 
 The normative class diagram of this specification is provided as a PlantUML source file alongside this document:
 
-* link:api_class_diagram.puml[`api_class_diagram.puml`] -- canonical UML model,
-* link:api_class_diagram.svg[`api_class_diagram.svg`]   -- rendered representation.
 
 [plantuml, target="api_class_diagram", format="svg"]
 ----
