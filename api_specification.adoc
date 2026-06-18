@@ -231,17 +231,19 @@ The `definitions` package contains every type defined by this specification.
 |===
 | Kind     | Final class
 | Package  | `definitions`
+| Since    | 1.0.0
 | Purpose  | Exposes the immutable properties of the {spec-name}.
 |===
 
 ===== Constants
 
-[cols="1,1,4", options="header"]
+[cols="1,1,1,4", options="header"]
 |===
-| Name      | Type     | Description
+| Name      | Type     | Since | Description
 
 | `VERSION`
 | `string`
+| 1.0.0
 | String representation of the version of the API implemented by the conforming binding (e.g. `"1.0"`).
   The value MUST be a dotted decimal of the form `MAJOR.MINOR`.
 |===
@@ -258,20 +260,21 @@ The `DefinitionsApiProperties` type MUST NOT be instantiated. Implementations MU
 |===
 | Kind     | Enumeration
 | Package  | `definitions`
+| Since    | 1.0.0
 | Purpose
 | Identifies a radio-frequency communication technology that a contactless reader can activate during polling.
   `RfTechnology` is used as an *input* parameter: the integrator declares, at detection time, which RF
   technologies the reader MUST attempt to detect.
 |===
 
-[cols="1,4", options="header"]
+[cols="1,1,4", options="header"]
 |===
-| Value                | Description
+| Value                | Since | Description
 
-| `ISO_14443_AB`       | ISO/IEC 14443 family, both Type A and Type B variants. The A/B distinction is *not* exposed at the polling level: the reader is asked to interrogate "the ISO 14443 family".
-| `INNOVATRON_B_PRIME` | Proprietary Innovatron B' technology.
-| `FELICA`             | Sony FeliCa technology.
-| `ISO_15693`          | ISO/IEC 15693 vicinity technology.
+| `ISO_14443_AB`       | 1.0.0 | ISO/IEC 14443 family, both Type A and Type B variants. The A/B distinction is *not* exposed at the polling level: the reader is asked to interrogate "the ISO 14443 family".
+| `INNOVATRON_B_PRIME` | 1.0.0 | Proprietary Innovatron B' technology.
+| `FELICA`             | 1.0.0 | Sony FeliCa technology.
+| `ISO_15693`          | 1.0.0 | ISO/IEC 15693 vicinity technology.
 |===
 
 [[type_CardType]]
@@ -281,25 +284,26 @@ The `DefinitionsApiProperties` type MUST NOT be instantiated. Implementations MU
 |===
 | Kind     | Enumeration
 | Package  | `definitions`
+| Since    | 1.0.0
 | Purpose
 | Identifies a card type, as observed after detection. `CardType` is used as an *output* datum: it characterises
   what was actually detected, combining transport-protocol level and, when applicable, product identity.
 |===
 
-[cols="1,4", options="header"]
+[cols="1,1,4", options="header"]
 |===
-| Value                                | Description
+| Value                                | Since | Description
 
-| `ISO_7816_3`                         | Contact card compliant with ISO/IEC 7816-3.
-| `ISO_14443_4`                        | Contactless card compliant with the ISO/IEC 14443-4 transport protocol. No A/B distinction is exposed at this level: the transport layer is identical and the application behaviour does not depend on the underlying sub-layer.
-| `ISO_14443_3A_MIFARE_CLASSIC_1K`     | MIFARE Classic 1 KB product (ISO/IEC 14443-3 Type A sub-layer).
-| `ISO_14443_3A_MIFARE_CLASSIC_4K`     | MIFARE Classic 4 KB product (ISO/IEC 14443-3 Type A sub-layer).
-| `ISO_14443_3A_MIFARE_ULTRALIGHT`     | MIFARE Ultralight product (ISO/IEC 14443-3 Type A sub-layer).
-| `ISO_14443_3B_ST25_SRT512`           | ST25 SRT512 product (ISO/IEC 14443-3 Type B sub-layer).
-| `INNOVATRON_B_PRIME`                 | Innovatron B' card.
-| `FELICA`                             | Sony FeliCa card.
-| `ISO_15693`                          | ISO/IEC 15693 vicinity card.
-| `UNKNOWN`                            | The implementation could not identify the card type. May happen when a card of a type not yet referenced by this enumeration is detected, or when the detection process is partial.
+| `ISO_7816_3`                         | 1.0.0 | Contact card compliant with ISO/IEC 7816-3.
+| `ISO_14443_4`                        | 1.0.0 | Contactless card compliant with the ISO/IEC 14443-4 transport protocol. No A/B distinction is exposed at this level: the transport layer is identical and the application behaviour does not depend on the underlying sub-layer.
+| `ISO_14443_3A_MIFARE_CLASSIC_1K`     | 1.0.0 | MIFARE Classic 1 KB product (ISO/IEC 14443-3 Type A sub-layer).
+| `ISO_14443_3A_MIFARE_CLASSIC_4K`     | 1.0.0 | MIFARE Classic 4 KB product (ISO/IEC 14443-3 Type A sub-layer).
+| `ISO_14443_3A_MIFARE_ULTRALIGHT`     | 1.0.0 | MIFARE Ultralight product (ISO/IEC 14443-3 Type A sub-layer).
+| `ISO_14443_3B_ST25_SRT512`           | 1.0.0 | ST25 SRT512 product (ISO/IEC 14443-3 Type B sub-layer).
+| `INNOVATRON_B_PRIME`                 | 1.0.0 | Innovatron B' card.
+| `FELICA`                             | 1.0.0 | Sony FeliCa card.
+| `ISO_15693`                          | 1.0.0 | ISO/IEC 15693 vicinity card.
+| `UNKNOWN`                            | 1.0.0 | The implementation could not identify the card type. May happen when a card of a type not yet referenced by this enumeration is detected, or when the detection process is partial.
 |===
 
 [NOTE]
