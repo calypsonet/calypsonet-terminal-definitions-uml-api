@@ -105,7 +105,7 @@ order to avoid ambiguity.
 ==== Naming
 
 Type names follow `UpperCamelCase`; enumeration values use `UPPER_SNAKE_CASE`. Names defined by this specification
-are reproduced exactly as they appear in the reference UML class diagram (<<sec_class_diagram>>).
+are reproduced as-is in the UML class diagram (<<sec_class_diagram>>).
 
 === References
 
@@ -199,7 +199,7 @@ App   --> Def   : transitively
 [[sec_class_diagram]]
 === UML class diagram
 
-The normative class diagram of this specification is provided as a PlantUML source file alongside this document:
+The following UML class diagram provides a visual representation of the types and relationships defined by this specification:
 
 
 [plantuml, target="api_class_diagram", format="svg"]
