@@ -252,30 +252,6 @@ The `definitions` package contains every type defined by this specification.
 The `DefinitionsApiProperties` type MUST NOT be instantiated. Implementations MUST prevent external construction.
 ====
 
-[[type_RfTechnology]]
-==== Enumeration RfTechnology
-
-[cols="1h,4", grid=rows, frame=all]
-|===
-| Kind     | Enumeration
-| Package  | `definitions`
-| Since    | 1.0.0
-| Purpose
-| Identifies a radio-frequency communication technology that a contactless reader can activate during polling.
-  `RfTechnology` is used as an *input* parameter: the integrator declares, at detection time, which RF
-  technologies the reader MUST attempt to detect.
-|===
-
-[cols="1,1,4", options="header"]
-|===
-| Value                | Since | Description
-
-| `ISO_14443_AB`       | 1.0.0 | ISO/IEC 14443 family, both Type A and Type B variants. The A/B distinction is *not* exposed at the polling level: the reader is asked to interrogate "the ISO 14443 family".
-| `INNOVATRON_B_PRIME` | 1.0.0 | Proprietary Innovatron B' technology.
-| `FELICA`             | 1.0.0 | Sony FeliCa technology.
-| `ISO_15693`          | 1.0.0 | ISO/IEC 15693 vicinity technology.
-|===
-
 [[type_CardType]]
 ==== Enumeration CardType
 
@@ -316,6 +292,30 @@ product-specific values.
 
 // =============================================================================
 [[sec_behaviours]]
+[[type_RfTechnology]]
+==== Enumeration RfTechnology
+
+[cols="1h,4", grid=rows, frame=all]
+|===
+| Kind     | Enumeration
+| Package  | `definitions`
+| Since    | 1.0.0
+| Purpose
+| Identifies a radio-frequency communication technology that a contactless reader can activate during polling.
+  `RfTechnology` is used as an *input* parameter: the integrator declares, at detection time, which RF
+  technologies the reader MUST attempt to detect.
+|===
+
+[cols="1,1,4", options="header"]
+|===
+| Value                | Since | Description
+
+| `ISO_14443_AB`       | 1.0.0 | ISO/IEC 14443 family, both Type A and Type B variants. The A/B distinction is *not* exposed at the polling level: the reader is asked to interrogate "the ISO 14443 family".
+| `INNOVATRON_B_PRIME` | 1.0.0 | Proprietary Innovatron B' technology.
+| `FELICA`             | 1.0.0 | Sony FeliCa technology.
+| `ISO_15693`          | 1.0.0 | ISO/IEC 15693 vicinity technology.
+|===
+
 == Behavioural Requirements
 
 . Implementations MUST expose the enumerations and their values with the exact identifiers prescribed in
