@@ -218,18 +218,17 @@ include::api_class_diagram.puml[Terminal Definitions API class diagram, align=ce
 [[sec_specification]]
 == API Specification
 
-// -----------------------------------------------------------------------------
-=== Package definitions
-
 The `definitions` package contains every type defined by this specification.
 
+=== Classes
+
 [[type_DefinitionsApiProperties]]
-==== DefinitionsApiProperties
+==== Definitions API Properties
 
 [cols="1h,4", grid=rows, frame=all]
 |===
 | Kind     | Final class
-| Package  | `definitions`
+| Namespace  | `definitions`
 | Since    | 1.0
 | Purpose  | Exposes the immutable properties of the {spec-name}.
 |===
@@ -252,13 +251,15 @@ The `definitions` package contains every type defined by this specification.
 The `DefinitionsApiProperties` type MUST NOT be instantiated. Implementations MUST prevent external construction.
 ====
 
+=== Enumerations
+
 [[type_CardType]]
-==== Enumeration CardType
+==== Card Type
 
 [cols="1h,4", grid=rows, frame=all]
 |===
 | Kind     | Enumeration
-| Package  | `definitions`
+| Namespace  | `definitions`
 | Since    | 1.0
 | Purpose
 | Identifies a card type, as observed after detection. `CardType` is used as an *output* datum: it characterises
@@ -291,14 +292,13 @@ product-specific values.
 ====
 
 // =============================================================================
-[[sec_behaviours]]
 [[type_RfTechnology]]
-==== Enumeration RfTechnology
+==== RF Technology
 
 [cols="1h,4", grid=rows, frame=all]
 |===
 | Kind     | Enumeration
-| Package  | `definitions`
+| Namespace  | `definitions`
 | Since    | 1.0
 | Purpose
 | Identifies a radio-frequency communication technology that a contactless reader can activate during polling.
@@ -316,6 +316,7 @@ product-specific values.
 | `ISO_15693`          | 1.0 | ISO/IEC 15693 vicinity technology.
 |===
 
+[[sec_behaviours]]
 == Behavioural Requirements
 
 . Implementations MUST expose the enumerations and their values with the exact identifiers prescribed in
