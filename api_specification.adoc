@@ -121,7 +121,7 @@ are reproduced as-is in the UML class diagram (<<sec_class_diagram>>).
 | RFC 8174
 | _Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words_, B. Leiba, May 2017.
 
-| [[ref_iso7816]] [ISO/IEC 7816-3]
+| [[ref_iso7816_3]] [ISO/IEC 7816-3]
 | ISO/IEC 7816-3
 | _Identification cards -- Integrated circuit cards -- Part 3: Cards with contacts -- Electrical interface and transmission protocols_.
 
@@ -137,9 +137,9 @@ are reproduced as-is in the UML class diagram (<<sec_class_diagram>>).
 | ISO/IEC 15693
 | _Identification cards -- Contactless integrated circuit cards -- Vicinity cards_.
 
-| [[ref_cna_reader]] [CNA-TR-API]
+| [[ref_cna_tr]] [CNA-TR-API]
 | CNA-TR-API
-| _Calypsonet Terminal Reader API Specification_, {organization}. Primary consumer of the enumerations defined here.
+| _Terminal Reader API Specification_, {organization}. Primary consumer of the enumerations defined here.
 |===
 
 // =============================================================================
