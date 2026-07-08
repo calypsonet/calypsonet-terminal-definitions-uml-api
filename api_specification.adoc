@@ -123,8 +123,8 @@ is backward-compatible per that API's evolution policy.
 | [[ref_rfc8174]] [RFC 8174]
 | https://www.rfc-editor.org/rfc/rfc8174[_Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words_], B. Leiba, May 2017.
 
-| [[ref_iso7816_3]] [ISO/IEC 7816-3]
-| https://www.iso.org[_Identification cards -- Integrated circuit cards -- Part 3: Cards with contacts -- Electrical interface and transmission protocols_].
+| [[ref_iso7816]] [ISO/IEC 7816]
+| https://www.iso.org[_Identification cards -- Integrated circuit cards_].
 
 | [[ref_iso14443]] [ISO/IEC 14443]
 | https://www.iso.org[_Identification cards -- Contactless integrated circuit cards -- Proximity cards_].
@@ -272,15 +272,15 @@ The `DefinitionsApiProperties` type MUST NOT be instantiated. Implementations MU
 |===
 | Value                                | Since | Description
 
-| `ISO_7816_3`                         | 1.0 | Contact card compliant with ISO/IEC 7816-3.
-| `ISO_14443_4`                        | 1.0 | Contactless card compliant with the ISO/IEC 14443-4 transport protocol. No A/B distinction is exposed at this level: the transport layer is identical and the application behaviour does not depend on the underlying sub-layer.
+| `ISO_7816_3`                         | 1.0 | Contact card compliant with <<ref_iso7816,ISO/IEC 7816-3>>.
+| `ISO_14443_4`                        | 1.0 | Contactless card compliant with the <<ref_iso14443,ISO/IEC 14443-4>> transport protocol. No A/B distinction is exposed at this level: the transport layer is identical and the application behaviour does not depend on the underlying sub-layer.
 | `ISO_14443_3A_MIFARE_CLASSIC_1K`     | 1.0 | MIFARE Classic 1 KB product (ISO/IEC 14443-3 Type A sub-layer).
 | `ISO_14443_3A_MIFARE_CLASSIC_4K`     | 1.0 | MIFARE Classic 4 KB product (ISO/IEC 14443-3 Type A sub-layer).
 | `ISO_14443_3A_MIFARE_ULTRALIGHT`     | 1.0 | MIFARE Ultralight product (ISO/IEC 14443-3 Type A sub-layer).
 | `ISO_14443_3B_ST25_SRT512`           | 1.0 | ST25 SRT512 product (ISO/IEC 14443-3 Type B sub-layer).
 | `INNOVATRON_B_PRIME`                 | 1.0 | Innovatron B' card.
 | `FELICA`                             | 1.0 | Sony FeliCa card.
-| `ISO_15693`                          | 1.0 | ISO/IEC 15693 vicinity card.
+| `ISO_15693`                          | 1.0 | <<ref_iso15693,ISO/IEC 15693>> vicinity card.
 | `UNKNOWN`                            | 1.0 | The implementation could not identify the card type. May happen when a card of a type not yet referenced by this enumeration is detected, or when the detection process is partial.
 |===
 
