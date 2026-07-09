@@ -106,6 +106,18 @@ order to avoid ambiguity.
 Type names follow `UpperCamelCase`; enumeration values use `UPPER_SNAKE_CASE`. Names defined by this specification
 are reproduced as-is in the UML class diagram (<<sec_class_diagram>>).
 
+==== Type tables
+
+Each class and enumeration defined in this document is described by a table of the form:
+
+[cols="1h,4", grid=rows, frame=all]
+|===
+| Kind      | The category of the type (class, enumeration, etc.).
+| Namespace | The package in which the type is defined.
+| Since     | The version of the API in which the type was introduced.
+| Purpose   | A normative description of the type's responsibility.
+|===
+
 === References and Resources
 
 References to CNA Terminal APIs designate the indicated *major* version; any later release within the same major
@@ -153,7 +165,7 @@ is backward-compatible per that API's evolution policy.
 |===
 | Term            | Definition
 
-| RF Technology   | Radio-frequency communication technology used by a contactless reader to detect a card.
+| RF Technology   | Radio-frequency communication technology used by a contactless reader to detect a card, as defined in ISO/IEC 14443.
 | Card Type       | Identified product or transport-protocol family of a detected card.
 | Polling         | The act, performed by a contactless reader, of broadcasting an interrogation pattern to discover a card in its field.
 |===
