@@ -332,8 +332,6 @@ product-specific values.
 [[sec_behaviours]]
 == Behavioural Requirements
 
-. Implementations MUST expose the enumerations and their values with the exact identifiers prescribed in
-  <<sec_specification>>.
 . Consumer APIs that use `CardType` as an output datum MUST return `UNKNOWN` when the type cannot be determined,
   rather than returning `null` or raising an exception.
 . Consumer APIs that use `RfTechnology` as an input parameter MUST treat unsupported values as a non-fatal
