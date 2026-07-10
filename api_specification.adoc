@@ -203,7 +203,7 @@ skinparam ArrowColor #2C3E50
 
 component "Terminal Application" as App
 component "Other Terminal APIs\n(e.g. Reader API)" as Other
-component "Terminal Definitions API\n(this specification)" as Def
+component "Terminal Definitions API\n(this specification)" as Def #LightYellow
 
 App   --> Other : uses
 Other --> Def   : depends on (public)
