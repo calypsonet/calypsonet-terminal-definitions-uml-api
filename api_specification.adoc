@@ -91,7 +91,7 @@ A software product conforms to this specification if and only if:
   here,
 . it preserves backward compatibility with respect to enumeration value identifiers across minor versions of the
   specification,
-. it preserves the structural and behavioural relationships described in <<sec_architecture>> and <<sec_behaviours>>.
+. it preserves the structural relationships described in <<sec_architecture>>.
 
 Throughout this specification, the key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, **RECOMMENDED**,
 **MAY** and **OPTIONAL** are to be interpreted as described in <<ref_rfc2119,RFC 2119>> and <<ref_rfc8174,RFC 8174>> when, and only when,
@@ -328,14 +328,6 @@ product-specific values.
 | `FELICA`             | 1.0 | Sony FeliCa technology.
 | `ISO_15693`          | 1.0 | ISO/IEC 15693 vicinity technology.
 |===
-
-[[sec_behaviours]]
-== Behavioural Requirements
-
-. Consumer APIs that use `CardType` as an output datum MUST return `UNKNOWN` when the type cannot be determined,
-  rather than returning `null` or raising an exception.
-. Consumer APIs that use `RfTechnology` as an input parameter MUST treat unsupported values as a non-fatal
-  configuration -- the unsupported value MUST be silently ignored and a `WARN`-level message SHOULD be logged.
 
 // =============================================================================
 [appendix]
