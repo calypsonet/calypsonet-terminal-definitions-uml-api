@@ -256,12 +256,12 @@ include::api_class_diagram.puml[Terminal Definitions API class diagram, align=ce
 | `string`
 | 1.0
 | String representation of the version of the API implemented by the conforming binding (e.g. `"1.0"`).
-  The value MUST be a dotted decimal of the form `MAJOR.MINOR`.
+  The value is a dotted decimal of the form `MAJOR.MINOR`.
 |===
 
 [NOTE]
 ====
-The `DefinitionsApiProperties` type MUST NOT be instantiated. Implementations MUST prevent external construction.
+The `DefinitionsApiProperties` type cannot be instantiated; it exposes only static properties.
 ====
 
 === Enumerations
@@ -292,7 +292,7 @@ The `DefinitionsApiProperties` type MUST NOT be instantiated. Implementations MU
 | `INNOVATRON_B_PRIME`                 | 1.0 | Innovatron B' card.
 | `FELICA`                             | 1.0 | Sony FeliCa card.
 | `ISO_15693`                          | 1.0 | <<ref_iso15693,ISO/IEC 15693>> vicinity card.
-| `UNKNOWN`                            | 1.0 | The implementation could not identify the card type. May happen when a card of a type not yet referenced by this enumeration is detected, or when the detection process is partial.
+| `UNKNOWN`                            | 1.0 | The card type could not be identified. May happen when a card of a type not yet referenced by this enumeration is detected, or when the detection process is partial.
 |===
 
 [NOTE]
@@ -316,7 +316,7 @@ product-specific values.
 | Purpose
 | Identifies a radio-frequency communication technology that a contactless reader can activate during polling.
   `RfTechnology` is used as an *input* parameter: the integrator declares, at detection time, which RF
-  technologies the reader MUST attempt to detect.
+  technologies the reader attempts to detect.
 |===
 
 [cols="1,1,4", options="header"]
