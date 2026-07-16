@@ -118,6 +118,7 @@ Each class and enumeration defined in this document is described by a table of t
 | Namespace | The namespace in which the type is defined.
 | Since     | The version of the API in which the type was introduced.
 | Purpose   | A normative description of the type's responsibility.
+| See also  | Cross-references to related operations or types, each a hyperlink to the corresponding table. Present only when applicable.
 |===
 
 === References and Resources
