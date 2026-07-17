@@ -2,6 +2,8 @@ extends: default
 
 page:
   margin: [1.0in, 0.67in, 0.67in, 0.67in]
+  numbering:
+    start-at: title
 
 font:
   catalog:
@@ -58,15 +60,17 @@ table:
     background-color: #f2f3f4
     border-bottom-width: 0.5
 
+running-content:
+  start-at: title
+
 header:
   height: 0.8in
-  border-color: #039efd
+  border-color: #9d9d9d
   border-width: 0.5
   padding: [16, 0, 4, 0]
   font-family: Montserrat
   font-size: 7
   font-color: #9d9d9d
-  start-at: body
   recto: &header-content
     left:
       content: image:logo.svg[pdfwidth=1.5in]
@@ -82,13 +86,12 @@ header:
 
 footer:
   height: 0.4in
-  border-color: #039efd
+  border-color: #9d9d9d
   border-width: 0.5
   padding: [4, 0, 4, 0]
   font-family: Montserrat
   font-size: 7
   font-color: #9d9d9d
-  start-at: body
   recto: &footer-content
     left:
       content: |
