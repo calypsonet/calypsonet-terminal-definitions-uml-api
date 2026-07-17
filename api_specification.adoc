@@ -28,6 +28,8 @@ v1.0.0-SNAPSHOT, {docdate}
 :short-name: CNA
 :spec-name: Terminal Definitions API
 :spec-id: CNA-TD-API
+:release-date: <YYMMDD>
+:doc-ref: {release-date}-SP-CNATerminalAPI-Definitions
 :spec-ref: 260717-SP-CNATerminalAPI-Definitions
 :spec-version: 1.0.0-SNAPSHOT
 
@@ -47,7 +49,8 @@ purpose is to host the cross-cutting enumerations that other Terminal APIs depen
 
 [cols="1h,3", grid=rows, frame=all]
 |===
-| Specification ID    | {spec-id}
+| Reference           | {doc-ref}
+| Short name          | {spec-id}
 | Version             | {spec-version}
 | Editor              | {organization}
 | Reference license   | Eclipse Public License -- v 2.0 (EPL-2.0)
