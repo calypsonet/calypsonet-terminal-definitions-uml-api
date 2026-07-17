@@ -31,6 +31,7 @@ role:
 
 title_page:
   align: center
+  background-image: image:title-page-rules.svg[]
   logo:
     align: center
     image: image:logo.svg[pdfwidth=4.0in]
