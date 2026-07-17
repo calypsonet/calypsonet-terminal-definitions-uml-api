@@ -23,6 +23,10 @@ base:
   font-size: 10.5
   font-color: #333333
 
+role:
+  color-calypso:
+    font-color: #039efd
+
 title_page:
   align: center
   logo:
@@ -55,27 +59,26 @@ table:
     border-bottom-width: 0.5
 
 header:
-  height: 0.6in
+  height: 0.8in
   border-color: #039efd
   border-width: 0.5
   padding: [16, 0, 4, 0]
   font-family: Montserrat
-  font-size: 9
+  font-size: 7
+  font-color: #9d9d9d
   start-at: body
-  recto:
+  recto: &header-content
     left:
-      content: image:logo.svg[pdfwidth=1.0in]
+      content: image:logo.svg[pdfwidth=1.5in]
       valign: center
     right:
-      content: '{spec-name} -- {spec-version}'
+      content: |
+        SPECIFICATION +
+        Public +
+        {spec-name} +
+        _{spec-ref}_
       valign: center
-  verso:
-    left:
-      content: image:logo.svg[pdfwidth=1.0in]
-      valign: center
-    right:
-      content: '{spec-name} -- {spec-version}'
-      valign: center
+  verso: *header-content
 
 footer:
   height: 0.4in
@@ -83,20 +86,18 @@ footer:
   border-width: 0.5
   padding: [4, 0, 4, 0]
   font-family: Montserrat
-  font-size: 8
-  font-color: #6b7280
+  font-size: 7
+  font-color: #9d9d9d
   start-at: body
-  recto:
+  recto: &footer-content
     left:
-      content: '{revdate}'
+      content: |
+        Version {nbsp} {spec-version} +
+        Date {nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp} {revdate}
       valign: center
     right:
-      content: '{page-number} / {page-count}'
+      content: |
+        [.color-calypso]#{page-number} / {page-count}# +
+        _© Calypso Networks Association 2026 -- Reproduction is prohibited without prior written agreement_
       valign: center
-  verso:
-    left:
-      content: '{revdate}'
-      valign: center
-    right:
-      content: '{page-number} / {page-count}'
-      valign: center
+  verso: *footer-content

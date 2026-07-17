@@ -28,6 +28,7 @@ v1.0.0-SNAPSHOT, {docdate}
 :short-name: CNA
 :spec-name: Terminal Definitions API
 :spec-id: CNA-TD-API
+:spec-ref: 260717-SP-CNATerminalAPI-Definitions
 :spec-version: 1.0.0-SNAPSHOT
 
 [abstract]
