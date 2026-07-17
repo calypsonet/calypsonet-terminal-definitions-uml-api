@@ -121,6 +121,10 @@ Each class and enumeration defined in this document is described by a table of t
 | See also  | Cross-references to related operations or types, each a hyperlink to the corresponding table. Present only when applicable.
 |===
 
+The *Purpose* row states, in one or two sentences, the responsibility of the type and the way an instance is
+obtained. Any content that requires structure -- rules, lists, notes, nested tables or examples -- is placed as
+prose below the table, because table cells render inline content only.
+
 === References and Resources
 
 References to CNA Terminal APIs designate the indicated *major* version; any later release within the same major
