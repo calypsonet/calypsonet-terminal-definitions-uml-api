@@ -1,4 +1,4 @@
-= CNA Terminal API -- Definitions
+= Specification: CNA Terminal API -- Definitions
 Calypso Networks Association <https://calypsonet.org>
 v1.0.0-SNAPSHOT, {docdate}
 :doctype: book

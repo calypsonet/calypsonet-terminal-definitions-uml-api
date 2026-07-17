@@ -34,14 +34,27 @@ title_page:
   logo:
     align: center
     image: image:logo.svg[pdfwidth=4.0in]
-    top: 20%
+    top: 30%
   title:
     align: center
-    font-color: #039efd
-  authors:
+    font-size: 14
+    font-color: #OOO
+    text-transform: uppercase
+  subtitle:
     align: center
+    font-size: 18
+    font-color: #039efd
+    margin-top: 15
+    font-style: normal
+  authors:
+    display: none
+    align: center
+    margin-top: 15
   revision:
     align: center
+    margin-top: 15
+    font-style: italic
+    font-color: #9d9d9d
 
 heading:
   font-color: #039efd
