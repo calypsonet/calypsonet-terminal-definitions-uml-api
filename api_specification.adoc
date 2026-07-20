@@ -68,6 +68,18 @@ purpose is to host the cross-cutting enumerations that other Terminal APIs depen
 NOTE: The present document specifies the {revnumber} of the {spec-name} as an *initial release*. It defines
 a single, coherent baseline against which conforming implementations are evaluated.
 
+[discrete]
+== Revision List
+
+[cols="^.^1,4", options="header"]
+|===
+| Version / Date | Modifications
+
+| *v{revnumber}* +
+{revdate}
+| Baseline.
+|===
+
 // =============================================================================
 == Introduction
 
