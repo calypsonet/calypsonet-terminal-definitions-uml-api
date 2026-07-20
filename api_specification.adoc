@@ -27,9 +27,7 @@ v1.0.0-SNAPSHOT, {docdate}
 :organization: Calypso Networks Association
 :spec-name: Terminal Definitions API
 :spec-id: CNA-TD-API
-:doc-ref: YYMMDD-SP-CNATerminalAPI-Definitions
-:spec-ref: 260717-SP-CNATerminalAPI-Definitions
-:spec-version: 1.0.0-SNAPSHOT
+:spec-ref: YYMMDD-SP-CNATerminalAPI-Definitions
 
 [abstract]
 == Abstract
@@ -47,14 +45,14 @@ purpose is to host the cross-cutting enumerations that other Terminal APIs depen
 
 [cols="1h,3", grid=rows, frame=all]
 |===
-| Reference           | {doc-ref}
+| Reference           | {spec-ref}
 | Short name          | {spec-id}
-| Version             | {spec-version}
+| Version             | {revnumber}
 | Editor              | {organization}
 | Reference license   | Eclipse Public License -- v 2.0 (EPL-2.0)
 |===
 
-NOTE: The present document specifies the {spec-version} of the {spec-name} as an *initial release*. It defines
+NOTE: The present document specifies the {revnumber} of the {spec-name} as an *initial release*. It defines
 a single, coherent baseline against which conforming implementations are evaluated.
 
 // =============================================================================

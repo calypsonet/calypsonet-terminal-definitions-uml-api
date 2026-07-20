@@ -109,7 +109,7 @@ footer:
   recto: &footer-content
     left:
       content: |
-        Version {nbsp} {spec-version} +
+        Version {nbsp} {revnumber} +
         Date {nbsp}{nbsp}{nbsp}{nbsp}{nbsp}{nbsp} {revdate}
       valign: center
     right:
