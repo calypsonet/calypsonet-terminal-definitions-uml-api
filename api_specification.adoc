@@ -244,6 +244,17 @@ App   --> Def   : transitively
 @enduml
 ....
 
+=== Logical namespaces
+
+[cols=".^2,^.^1,.^6", options="header"]
+|===
+| Namespace      | Role     | Summary
+
+| `definitions`  | Public API
+| Shared vocabulary of the CNA Terminal API: the RF-technology and card-type enumerations (`RfTechnology`,
+  `CardType`) and the API properties, reused across the terminal API specifications.
+|===
+
 [[sec_class_diagram]]
 === UML class diagram
 
