@@ -137,7 +137,7 @@ are reproduced as-is in the UML class diagram (<<sec_class_diagram>>).
 
 Each class and enumeration defined in this document is described by a table of the form:
 
-[cols="1h,4", grid=rows, frame=all]
+[cols="^.^1h,.^5", grid=rows, frame=all]
 |===
 | Name       | The type's normalized name.
 | Kind      | The category of the type (class, enumeration, etc.).
@@ -271,7 +271,7 @@ include::api_class_diagram.puml[Terminal Definitions API class diagram, align=ce
 [[type_DefinitionsApiProperties]]
 ==== Definitions API Properties
 
-[cols="1h,4", grid=rows, frame=all]
+[cols="^.^1h,.^5", grid=rows, frame=all]
 |===
 | Name     | `DefinitionsApiProperties`
 | Kind     | Final class
@@ -303,7 +303,7 @@ The `DefinitionsApiProperties` type cannot be instantiated; it exposes only stat
 [[type_CardType]]
 ==== Card Type
 
-[cols="1h,4", grid=rows, frame=all]
+[cols="^.^1h,.^5", grid=rows, frame=all]
 |===
 | Name     | `CardType`
 | Kind     | Enumeration
@@ -343,7 +343,7 @@ product-specific values.
 [[type_RfTechnology]]
 ==== RF Technology
 
-[cols="1h,4", grid=rows, frame=all]
+[cols="^.^1h,.^5", grid=rows, frame=all]
 |===
 | Name     | `RfTechnology`
 | Kind     | Enumeration
