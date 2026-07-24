@@ -2,9 +2,9 @@
 Calypso Networks Association <https://calypsonet.org>
 //
 // Document identity
-:spec-name: Terminal Definitions API
-:spec-id: CNA-TD-API
-:spec-ref: YYMMDD-SP-CNATerminalAPI-Definitions
+:doc-name: Terminal Definitions API
+:doc-id: CNA-TD-API
+:doc-ref: YYMMDD-SP-CNATerminalAPI-Definitions
 :organization: Calypso Networks Association
 //
 // Revision
@@ -45,12 +45,12 @@ Calypso Networks Association <https://calypsonet.org>
 [abstract]
 == Abstract
 
-This document is the official technical specification of the **{spec-name}** standardised
+This document is the official technical specification of the **{doc-name}** standardised
 by the **{organization}** (CNA).
 It defines, in a language-agnostic way, the enumerated types that constitute *global constants* shared between
 several APIs of the CNA *Terminal API* family.
 
-The {spec-name} is a *foundation* module: it exposes no service interface, no SPI, no state machine. Its sole
+The {doc-name} is a *foundation* module: it exposes no service interface, no SPI, no state machine. Its sole
 purpose is to host the cross-cutting enumerations that other Terminal APIs depend on.
 
 [discrete]
@@ -58,15 +58,15 @@ purpose is to host the cross-cutting enumerations that other Terminal APIs depen
 
 [cols="^.^1h,.^3", grid=rows, frame=all]
 |===
-| Reference           | {spec-ref}
-| Short name          | {spec-id}
+| Reference           | {doc-ref}
+| Short name          | {doc-id}
 | Version             | {revnumber}
 | Revision date       | {revdate}
 | Editor              | {organization}
 | Reference license   | Eclipse Public License -- v 2.0 (EPL-2.0)
 |===
 
-NOTE: The present document specifies the {revnumber} of the {spec-name} as an *initial release*. It defines
+NOTE: The present document specifies the {revnumber} of the {doc-name} as an *initial release*. It defines
 a single, coherent baseline against which conforming implementations are evaluated.
 
 [discrete]
@@ -86,7 +86,7 @@ a single, coherent baseline against which conforming implementations are evaluat
 
 === Purpose
 
-The {spec-name} centralises the *enumerated types* that constitute global constants shared between several CNA
+The {doc-name} centralises the *enumerated types* that constitute global constants shared between several CNA
 Terminal APIs. By isolating these notions in a dedicated module, the family avoids:
 
 * duplicating the same enumerations across several APIs,
@@ -223,7 +223,7 @@ This specification defines the shared vocabulary of the CNA Terminal API; it doe
 
 === Functional positioning
 
-The {spec-name} is depended upon by other CNA Terminal APIs that need to expose typed constants in their public
+The {doc-name} is depended upon by other CNA Terminal APIs that need to expose typed constants in their public
 signatures. The dependency is *public* (the enumerations appear in the consuming APIs' public surface) and is
 expected to be propagated transitively to the consumers of those APIs:
 
@@ -288,7 +288,7 @@ include::api_class_diagram.puml[Terminal Definitions API class diagram, align=ce
 | Kind     | Final class
 | Namespace  | `definitions`
 | Since    | 1.0
-| Purpose  | Exposes the immutable properties of the {spec-name}.
+| Purpose  | Exposes the immutable properties of the {doc-name}.
 |===
 
 ===== Constants
