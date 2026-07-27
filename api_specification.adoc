@@ -1,4 +1,4 @@
-= Specification: CNA Terminal API -- Definitions
+= {doc-type}: Definitions
 Calypso Networks Association <https://calypsonet.org>
 //
 // Document identity
