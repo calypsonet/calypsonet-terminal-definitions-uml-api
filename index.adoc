@@ -273,21 +273,9 @@ signatures. The dependency is *public* (the enumerations appear in the consuming
 expected to be propagated transitively to the consumers of those APIs:
 
 [plantuml, target=architecture-overview, format=svg]
-....
-@startuml
-skinparam shadowing false
-skinparam roundCorner 8
-skinparam ArrowColor #2C3E50
-
-component "Terminal Application" as App
-component "Other Terminal APIs\n(e.g. Reader API)" as Other
-component "Terminal Definitions API\n(this specification)" as Def #LightYellow
-
-App   --> Other : uses
-Other --> Def   : depends on (public)
-App   --> Def   : transitively
-@enduml
-....
+----
+include::uml/architecture-overview.puml[]
+----
 
 === Logical namespaces
 
@@ -305,9 +293,9 @@ App   --> Def   : transitively
 
 The following UML class diagram provides a visual representation of the types and relationships defined by this specification:
 
-[plantuml, target="api_class_diagram", format="svg"]
+[plantuml, target="class-diagram", format="svg"]
 ----
-include::api_class_diagram.puml[Terminal Definitions API class diagram, align=center]
+include::uml/class-diagram.puml[Terminal Definitions API class diagram, align=center]
 ----
 
 === Evolution policy
