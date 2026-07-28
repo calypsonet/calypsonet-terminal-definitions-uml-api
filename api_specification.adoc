@@ -1,17 +1,46 @@
-= {doc-type}: Definitions
-Calypso Networks Association <https://calypsonet.org>
+= {doc-title} — {doc-subtitle}
 //
-// Document identity
+// ============================================================================
+// Dynamic — update these (everything below is shared / fixed)
+// ============================================================================
+//
+// Per-spec identity
+:doc-topic: Definitions
 :doc-name: Terminal Definitions API
-:doc-id: CNA-TD-API
-:doc-ref: YYMMDD-SP-CNATerminalAPI-Definitions
 :doc-type: Specification
 :doc-classification: Public
-:organization: Calypso Networks Association
+:doc-id: CNA-TD-API
+:doc-ref: YYMMDD-SP-CNATerminalAPI-Definitions
 //
-// Revision
+// Revision (bumped every edition)
 :revnumber: 1.0.0-SNAPSHOT
 :revdate: 2026-07-20
+//
+// ============================================================================
+// Document-specific constants (local — differ per spec)
+// ============================================================================
+//
+// Referenced specifications
+//
+// ============================================================================
+// Shared / fixed — identical across every spec
+// ============================================================================
+//
+// Title composition (fixed expression)
+:doc-title: {doc-type}
+:doc-subtitle: {doc-topic}
+:title-separator: —
+//
+// Publisher and authorship
+:organization: Calypso Networks Association
+:author: Calypso_Networks_Association
+:email: https://calypsonet.org
+//
+// ============================================================================
+// Technical settings — common to all documents (build, rendering, output)
+// ============================================================================
+//
+// Build (works with revdate for deterministic output)
 :reproducible:
 //
 // Output & rendering
@@ -38,7 +67,7 @@ Calypso Networks Association <https://calypsonet.org>
 :pdf-theme: calypso
 :pdf-fontsdir: {docdir}/assets/fonts
 //
-// Captions
+// Captions & sectioning
 :appendix-caption: Annex
 :example-caption: Example
 :figure-caption: Figure
