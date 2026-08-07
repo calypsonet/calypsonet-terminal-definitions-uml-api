@@ -285,6 +285,7 @@ The {doc-name} is depended upon by other CNA Terminal APIs that need to expose t
 signatures. The dependency is *public* (the enumerations appear in the consuming APIs' public surface) and is
 expected to be propagated transitively to the consumers of those APIs:
 
+.{doc-name} -- Architecture Overview
 [plantuml, target=architecture-overview, format=svg]
 ----
 include::uml/architecture-overview.puml[]
@@ -306,9 +307,10 @@ include::uml/architecture-overview.puml[]
 
 The following UML class diagram provides a visual representation of the types and relationships defined by this specification:
 
+.{doc-name} -- UML Class Diagram
 [plantuml, target="class-diagram", format="svg"]
 ----
-include::uml/class-diagram.puml[Terminal Definitions API class diagram, align=center]
+include::uml/class-diagram.puml[Terminal Definitions API class diagram]
 ----
 
 === Evolution policy
