@@ -97,8 +97,8 @@ include::assets/layout/_colophon.adoc[]
 
 This document is the official technical specification of the **{doc-name}** standardised
 by the **{organization}** (CNA).
-It defines, in a language-agnostic way, the enumerated types that constitute *global constants* shared between
-several APIs of the CNA *Terminal API* family.
+It defines, in a language-agnostic way (using a notation inspired by the Kotlin language), the enumerated
+types that constitute *global constants* shared between several APIs of the CNA *Terminal API* family.
 
 The {doc-name} is a *foundation* module: it exposes no service interface, no SPI, no state machine. Its sole
 purpose is to host the cross-cutting enumerations that other Terminal APIs depend on.
@@ -346,7 +346,7 @@ include::uml/class-diagram.puml[Terminal Definitions API class diagram]
 | Name      | Type     | Since | Description
 
 | `VERSION`
-| `string`
+| `String`
 | 1.0
 | String representation of the version of the API implemented by the conforming binding (e.g. `"1.0"`).
   The value is a dotted decimal of the form `MAJOR.MINOR`.

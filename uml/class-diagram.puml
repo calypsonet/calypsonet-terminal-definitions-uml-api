@@ -67,7 +67,7 @@ end legend
 package "definitions" as api {
 
 +class "**final** DefinitionsApiProperties" as ApiProperties <<green>> {
-    +{static} **final** VERSION: string
+    +{static} **final** VERSION: String
 }
 +enum "RfTechnology" as RfTechnology <<green>> {
     ISO_14443_AB
