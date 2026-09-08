@@ -61,7 +61,7 @@ legend top
     *** <s><b>Element marked as deprecated
     *** <color:grey><b>Work in progress...
     * __Object__
-    *** <back:#E9F7EF><color:#27AE60><b>Class, enum or exception
+    *** <back:#E9F7EF><color:#27AE60><b>Class, enum or error
 end legend
 
 package "definitions" as api {
