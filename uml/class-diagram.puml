@@ -22,7 +22,7 @@ end title
 skinparam stereotypeABorderColor #A9DCDF
 skinparam stereotypeIBorderColor #B4A7E5
 skinparam stereotypeCBorderColor #ADD1B2
-skinparam stereotypeEBorderColor #EB93DF
+skinparam stereotypeEBorderColor #EB937F
 ' -- END --
 
 skinparam ClassBorderThickness 2
@@ -66,8 +66,8 @@ end legend
 
 package "definitions" as api {
 
-class "**final** DefinitionsApiProperties" as ApiProperties <<green>> {
-    +{static} **final** VERSION: String
+class "DefinitionsApiProperties" as ApiProperties <<green>> <<constants>> {
+    +const VERSION: String = "1.0"
 }
 enum "RfTechnology" as RfTechnology <<green>> {
     ISO_14443_AB
