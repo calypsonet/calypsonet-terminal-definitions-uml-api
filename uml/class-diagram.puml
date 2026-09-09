@@ -66,16 +66,16 @@ end legend
 
 package "definitions" as api {
 
-+class "**final** DefinitionsApiProperties" as ApiProperties <<green>> {
+class "**final** DefinitionsApiProperties" as ApiProperties <<green>> {
     +{static} **final** VERSION: String
 }
-+enum "RfTechnology" as RfTechnology <<green>> {
+enum "RfTechnology" as RfTechnology <<green>> {
     ISO_14443_AB
     INNOVATRON_B_PRIME
     FELICA
     ISO_15693
 }
-+enum "CardType" as CardType <<green>> {
+enum "CardType" as CardType <<green>> {
     ISO_7816_3
     ISO_14443_4
     ISO_14443_3A_MIFARE_CLASSIC_1K
