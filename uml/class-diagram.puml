@@ -66,7 +66,7 @@ end legend
 
 package "definitions" as api {
 
-class "DefinitionsApiProperties" as ApiProperties <<green>> <<constants>> {
+class "DefinitionsApiProperties" as ApiProperties <<constants>> <<green>> {
     +const VERSION: String = "1.0"
 }
 enum "RfTechnology" as RfTechnology <<green>> {
