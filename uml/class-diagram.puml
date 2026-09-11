@@ -70,22 +70,22 @@ class "DefinitionsApiProperties" as ApiProperties <<constants>> <<green>> {
     +const VERSION: String = "1.0"
 }
 enum "RfTechnology" as RfTechnology <<green>> {
-    ISO_14443_AB
-    INNOVATRON_B_PRIME
-    FELICA
-    ISO_15693
+    +ISO_14443_AB
+    +INNOVATRON_B_PRIME
+    +FELICA
+    +ISO_15693
 }
 enum "CardType" as CardType <<green>> {
-    ISO_7816_3
-    ISO_14443_4
-    ISO_14443_3A_MIFARE_CLASSIC_1K
-    ISO_14443_3A_MIFARE_CLASSIC_4K
-    ISO_14443_3A_MIFARE_ULTRALIGHT
-    ISO_14443_3B_ST25_SRT512
-    INNOVATRON_B_PRIME
-    FELICA
-    ISO_15693
-    UNKNOWN
+    +ISO_7816_3
+    +ISO_14443_4
+    +ISO_14443_3A_MIFARE_CLASSIC_1K
+    +ISO_14443_3A_MIFARE_CLASSIC_4K
+    +ISO_14443_3A_MIFARE_ULTRALIGHT
+    +ISO_14443_3B_ST25_SRT512
+    +INNOVATRON_B_PRIME
+    +FELICA
+    +ISO_15693
+    +UNKNOWN
 }
 }
 
